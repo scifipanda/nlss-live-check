@@ -61,7 +61,7 @@ class StreamInfo extends React.Component {
             }
         }
         else {
-            if(this.props.isDark) {
+            if(this.props.isDark === ' darkmode') {
                 return twittersvgDark
             }else {
                 return twittersvg

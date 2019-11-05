@@ -70,7 +70,7 @@ class App extends React.Component {
                 
                 <h1 className="center">Who is live?</h1>
                 <div className='button'>
-                    <button onClick={() => this.hideOffline()}>Only show live streams</button>
+                    <button onClick={() => this.hideOffline()}>{this.state.hide ? 'Show all streams' : 'Only show live streams'}</button>
                 </div>
                 <div className="button">
                    <button onClick={() => this.darkToggle()}>Darkmode toggle</button> 
