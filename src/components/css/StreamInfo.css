@@ -1,0 +1,77 @@
+.stream-container {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 5px 0 rgb(71, 74, 77);
+    transition: 0.15s;
+    margin: 10px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.stream-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 0 rgb(71, 74, 77);
+}
+
+.stream-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 7px;
+}
+
+.stream-info-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
+}
+
+.icon {
+    width: 25px;
+    transition: 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.25);
+}
+
+.user {
+    font-size: 1.2rem;
+    width: max-content;
+    margin: 5px auto;
+    transition: 0.2s;
+    color: black;
+    text-decoration: none;
+}
+
+.user:hover {
+    transform: scale(1.15);
+}
+
+.Live {
+    background-color: rgb(255, 82, 82);
+}
+
+.Offline {
+    opacity: 0.8;
+    background: rgb(101, 186, 255);
+}
+
+hr {
+    border-color: black;
+}
