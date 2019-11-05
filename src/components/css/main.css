@@ -16,7 +16,6 @@ body {
  position: relative;
  padding: 0;
  margin: 0;
- background: rgb(132, 239, 255);
 }
 
 .main-container {
@@ -38,6 +37,7 @@ body {
 
 .button {
     text-align: center;
+    margin: 2px;
 }
 .button button {
     background-color: rgb(101, 186, 255);
@@ -74,9 +74,28 @@ body {
     background-color: rgb(36, 40, 46);
 }
 
+.darkmode {
+    background-color: rgb(44, 57, 71);
+}
+
+.darkmode * {
+    color: #cacaca;
+}
+
+.darkmode .button button{
+    background-color: rgb(15, 15, 77);
+}
+
+.litemode {
+    background-color: rgb(132, 239, 255);
+}
+
+.litemode h1 {
+    color: black;
+}
 
 a {
-    color: rgb(175, 76, 76);
+    color: rgb(175, 76, 76) !important;
     text-decoration: none;
 }
 

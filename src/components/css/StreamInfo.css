@@ -6,7 +6,7 @@
     height: 150px;
     overflow: hidden;
     margin: 10px;
-    box-shadow: 0 5px 0 rgb(71, 74, 77);
+    box-shadow: 0 5px 0 rgb(34, 37, 39);
     transition: 0.15s;
     margin: 10px auto;
 }
@@ -23,9 +23,13 @@
     display: none;
 }
 
+.hide {
+    visibility: hidden;
+}
+
 .stream-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 0 rgb(71, 74, 77);
+    box-shadow: 0 10px 0 rgb(75, 84, 94);
 }
 
 .stream-title {
@@ -55,7 +59,6 @@
     width: max-content;
     margin: 5px auto;
     transition: 0.2s;
-    color: black;
     text-decoration: none;
 }
 
@@ -63,13 +66,24 @@
     transform: scale(1.15);
 }
 
-.Live {
-    background-color: rgb(255, 82, 82);
-}
-
 .Offline {
     opacity: 0.8;
-    background: rgb(101, 186, 255);
+}
+
+.darkmode.Live {
+    background-color: rgb(131, 21, 21);
+}
+
+.darkmode.Offline {
+    background-color: rgb(15, 15, 77);
+}
+
+.litemode.Offline {
+    background-color: rgb(101, 186, 255); 
+}
+
+.litemode.Live {
+    background-color: rgb(255, 82, 82);
 }
 
 hr {

@@ -3,6 +3,8 @@ import './css/StreamInfo.css';
 import twitch from './api/twitch';
 import twittersvg from './images/twitter.svg';
 import youtubesvg from './images/youtube.svg';
+import twittersvgDark from './images/twitterDark.svg';
+import youtubesvgDark from './images/youtubeDark.svg';
 
 // Global variables
 let live = 'Live';
@@ -16,6 +18,7 @@ class StreamInfo extends React.Component {
 
     componentDidMount() {
         this.checkLive(this.props.user[0])
+        this.darkIcon();
     }
     
     checkLive = async streamer => { // Function to check who is live and to set title to live channels title
@@ -40,7 +43,7 @@ class StreamInfo extends React.Component {
             thisState.setState({[un]: live});
         }
     }
- 
+
     getGame = () => { // Function to get current game being played by live channel
         let thisState = this
 
@@ -49,16 +52,41 @@ class StreamInfo extends React.Component {
         }
     }    
 
+    darkIcon = (icon) => {
+        if(icon === 'youtubesvg') {
+            if(this.props.isDark === ' darkmode') {
+                return youtubesvgDark
+            }else {
+                return youtubesvg
+            }
+        }
+        else {
+            if(this.props.isDark) {
+                return twittersvgDark
+            }else {
+                return twittersvg
+            }
+        }
+    }
+
+    hasYoutube = () => {
+        if(this.props.user[2] !== 'no-youtube') {
+            return <a href={'https://youtube.com/' + this.props.user[2]}><img className="icon" src={this.darkIcon('youtubesvg')} alt="youtube"/> </a>
+        }else {
+            return <img className="icon hide" src={youtubesvg} alt="youtube"/> 
+        }
+    }
+
     render(){
         if(!this.props.isHidden || this.state[this.props.user[0]] === live) { // Only renders if channel is live or if channel is not marked hidden
            return(
-            <div className={'stream-container bold center ' + this.state[this.props.user[0]]}>
+            <div className={'stream-container bold center ' + this.state[this.props.user[0]] + this.props.isDark}>
                 <a href={'https://twitch.tv/' + this.props.user[0]}><h1 className='user'>{this.props.user[0].toUpperCase()}</h1></a>
 
                 <div className="stream-info-container">
-                    <a href={'https://twitter.com/' + this.props.user[1]}><img className="icon" src={twittersvg} alt="twitter"/> </a>
-                    <div>{this.state[this.props.user[0]]}</div>
-                    <a href={'https://youtube.com/' + this.props.user[2]}><img className="icon" src={youtubesvg} alt="youtube" /></a>
+                    <a href={'https://twitter.com/' + this.props.user[1]}><img className="icon" src={this.darkIcon('twittersvg')} alt="twitter"/> </a>
+                    <div className='center'>{this.state[this.props.user[0]]}</div>
+                    {this.hasYoutube()}
                 </div>
                 
                 <hr />
