@@ -27,11 +27,16 @@ body {
    }
 
 .people-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fill, minMax(250px, 250px));
     grid-gap: 0 2px;
-    width: 75%;
+    
+    
+    justify-content: space-between; */
     margin: 0 auto;
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 
@@ -75,15 +80,15 @@ body {
 }
 
 .darkmode {
-    background-color: rgb(44, 57, 71);
+    background-color: #354050;
 }
 
 .darkmode * {
-    color: #cacaca;
+    color: #eeeeee;
 }
 
 .darkmode .button button{
-    background-color: rgb(15, 15, 77);
+    background-color: #393e46;
 }
 
 .litemode {

@@ -11,22 +11,6 @@
     margin: 10px auto;
 }
 
-.center {
-    text-align: center;
-}
-
-.bold {
-    font-weight: 600;
-}
-
-.hidden {
-    display: none;
-}
-
-.hide {
-    visibility: hidden;
-}
-
 .stream-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 0 rgb(75, 84, 94);
@@ -43,6 +27,22 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20%;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 .icon {
@@ -71,11 +71,11 @@
 }
 
 .darkmode.Live {
-    background-color: rgb(131, 21, 21);
+    background-color: #039da5;
 }
 
 .darkmode.Offline {
-    background-color: rgb(15, 15, 77);
+    background-color: #262b30;
 }
 
 .litemode.Offline {

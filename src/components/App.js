@@ -68,7 +68,7 @@ class App extends React.Component {
         return(
             <div className={'main-container ' + this.isDark()}>
                 
-                <h1 className="center">Who is live?</h1>
+                <h1 className="center">NLSS Live Stream Check</h1>
                 <div className='button'>
                     <button onClick={() => this.hideOffline()}>{this.state.hide ? 'Show all streams' : 'Only show live streams'}</button>
                 </div>
