@@ -3,10 +3,7 @@ import './css/main.css';
 import StreamInfo from './StreamInfo';
 import ls from 'local-storage'
 
-// northernlion: offline, rockleesmile: offline, dumbdog: offline, michaelalfox: offline, jsmithoti: offline, alpacapatrol: offline, cobaltstreak: offline, baertaffy: offline, dangheesling: offline, sinvicta: offline, lovelymomo: offline, mathas: offline, flackblag: offline, hcjustin: offline, itshafu: offline
-// let dark = localStorage.getItem('darkMode');
-
-let streamers = [ // List of current streamers [twitch channel] [twitter account] [youtube channel]
+let streamers = [ // List of current streamers [twitch channel, twitter account, youtube channel]
     ['northernlion', 'northernlionlp', 'northernlion'],
     ['rockleesmile', 'rockleesmile', 'rockleesmile'],
     ['dumbdog', 'verydumbdog', 'lastgreywolf'],
@@ -26,9 +23,6 @@ let streamers = [ // List of current streamers [twitch channel] [twitter account
     ['sinowbeats', 'sinowbeats', 'channel/UCQghs_p93F6BdyRiPJST2rg']
 ]
 
-
-
-
 class App extends React.Component {
     constructor(props) {
         super();
@@ -37,13 +31,13 @@ class App extends React.Component {
     
     state = { hide: false, dark: false }
 
-    componentDidMount() {
+    componentDidMount() {  // Sets state to saved preference if it exists
         if(ls.get('dark')) {
             this.setState({ dark: ls.get('dark') })
         }
     }
 
-    isDark = () => {
+    isDark = () => {  // Returns either darkmode or litemode class depending on which is currently selected
         if(this.state.dark) {
             return ' darkmode';
         }else {
@@ -51,7 +45,7 @@ class App extends React.Component {
         }
     }
 
-    darkToggle = () => {
+    darkToggle = () => { // Toggles this.state.dark
         this.setState({dark: !this.state.dark});
         ls.set('dark', !this.state.dark );
     }
@@ -68,21 +62,21 @@ class App extends React.Component {
         return(
             <div className={'main-container ' + this.isDark()}>
                 
-                <h1 className="center">NLSS Live Stream Check</h1>
-                <div className='button'>
-                    <button onClick={() => this.hideOffline()}>{this.state.hide ? 'Show all streams' : 'Only show live streams'}</button>
+                <h1 className="title center">NLSS Live Stream Check</h1>
+                <div className='button center'>
+                    <button className="shadow" onClick={() => this.hideOffline()}>{this.state.hide ? 'Show all streams' : 'Only show live streams'}</button>
                 </div>
-                <div className="button">
-                   <button onClick={() => this.darkToggle()}>Darkmode toggle</button> 
+                <div className="button center">
+                   <button className="shadow" onClick={() => this.darkToggle()}>Darkmode toggle</button> 
                 </div>
                 
                 <div className="people-container">
                     {streamers.map(this.renderStreamer)}
                 </div>
 
-                <div className='footer'>
-                    <p>Contact me on <a href='reddit.com/message/compose/?to=scifi_panda'>Reddit</a> or <a href='https://twitter.com/Scifi_Panda'>Twitter</a>.</p>
-                    <p>Original by <a href='https://twitter.com/eluctweets'>@eluctweets</a></p>
+                <div className='footer center'>
+                    <p style={{padding: '0 10px'}}>Contact me on <a href='reddit.com/message/compose/?to=scifi_panda'>Reddit</a> or <a href='https://twitter.com/Scifi_Panda'>Twitter</a>.</p>
+                    <p style={{padding: '0 10px'}}>Original by <a href='https://twitter.com/eluctweets'>@eluctweets</a></p>
                 </div>
             </div>
         )

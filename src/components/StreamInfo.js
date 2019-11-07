@@ -12,6 +12,10 @@ let offline = 'Offline';
 let status = offline;
 let streamInfo;
 
+// this.props.user[0] = twitch;
+// this.props.user[1] = twitter;
+// this.props.user[2] = youtube;
+
 class StreamInfo extends React.Component {
 
     state = { [this.props.user[0]]: offline, game: undefined, title: undefined};
@@ -24,23 +28,23 @@ class StreamInfo extends React.Component {
     checkLive = async streamer => { // Function to check who is live and to set title to live channels title
         let thisState = this
         
-        const response = await twitch.get('/streams/', {
+        const response = await twitch.get('/streams/', { // Calls twitch api and gets info about streamer
             params: { user_login: streamer }
         })
 
-        if(response.data.data[0]) {
+        if(response.data.data[0]) { // Checks if streamer is online
             streamInfo = response.data.data[0];
             let un = streamInfo.user_name.toLowerCase();
             
             thisState.setState({title: streamInfo.title})
 
             const game = await twitch.get('/games/', {
-                params: { id: response.data.data[0].game_id}
+                params: { id: streamInfo.game_id}
             })
             
-            thisState.setState({game: game.data.data[0].name})
+            thisState.setState({game: game.data.data[0].name}) // Sets this.state.game to current game being played by streamer
             
-            thisState.setState({[un]: live});
+            thisState.setState({[un]: live}); // Marks streamer as live
         }
     }
 
@@ -52,7 +56,7 @@ class StreamInfo extends React.Component {
         }
     }    
 
-    darkIcon = (icon) => {
+    darkIcon = (icon) => { // Changes icon depending on if it's dark or litemode
         if(icon === 'youtubesvg') {
             if(this.props.isDark === ' darkmode') {
                 return youtubesvgDark
@@ -80,7 +84,7 @@ class StreamInfo extends React.Component {
     render(){
         if(!this.props.isHidden || this.state[this.props.user[0]] === live) { // Only renders if channel is live or if channel is not marked hidden
            return(
-            <div className={'stream-container bold center ' + this.state[this.props.user[0]] + this.props.isDark}>
+            <div className={'stream-container shadow bold center ' + this.state[this.props.user[0]] + this.props.isDark}>
                 <a href={'https://twitch.tv/' + this.props.user[0]}><h1 className='user'>{this.props.user[0].toUpperCase()}</h1></a>
 
                 <div className="stream-info-container">
@@ -89,10 +93,10 @@ class StreamInfo extends React.Component {
                     {this.hasYoutube()}
                 </div>
                 
-                <hr />
+                <hr className="hr" />
 
-                <div className="stream-title">{this.state.title}</div>
-                <div className="stream-title">{this.state.game}</div>
+                <div className="stream-title"><span>{this.state.title}</span></div>
+                <div className="stream-title"><span>{this.state.game}</span></div>
             </div>
         ) 
         }

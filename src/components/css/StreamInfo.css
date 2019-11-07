@@ -1,19 +1,27 @@
 .stream-container {
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 10px;
     display: inline-block;
     width: 250px;
     height: 150px;
     overflow: hidden;
-    margin: 10px;
+    margin: 5px;
     box-shadow: 0 5px 0 rgb(34, 37, 39);
     transition: 0.15s;
-    margin: 10px auto;
+    margin: 3px auto;
 }
 
 .stream-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 0 rgb(75, 84, 94);
+    box-shadow: 0 10px 0 rgb(21, 31, 41);
+}
+
+
+
+.stream-info-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
 }
 
 .stream-title {
@@ -23,27 +31,7 @@
     padding: 5px 7px;
 }
 
-.stream-info-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20%;
-}
-
-.center {
-    text-align: center;
-}
-
-.bold {
-    font-weight: 600;
-}
-
-.hidden {
-    display: none;
-}
-
-.hide {
-    visibility: hidden;
-}
+/* Streamer link and info styling */
 
 .icon {
     width: 25px;
@@ -64,28 +52,4 @@
 
 .user:hover {
     transform: scale(1.15);
-}
-
-.Offline {
-    opacity: 0.8;
-}
-
-.darkmode.Live {
-    background-color: #039da5;
-}
-
-.darkmode.Offline {
-    background-color: #262b30;
-}
-
-.litemode.Offline {
-    background-color: rgb(101, 186, 255); 
-}
-
-.litemode.Live {
-    background-color: rgb(255, 82, 82);
-}
-
-hr {
-    border-color: black;
 }
