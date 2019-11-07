@@ -75,7 +75,7 @@ class App extends React.Component {
                 </div>
 
                 <div className='footer center'>
-                    <p style={{padding: '0 10px'}}>Contact me on <a href='reddit.com/message/compose/?to=scifi_panda'>Reddit</a> or <a href='https://twitter.com/Scifi_Panda'>Twitter</a>.</p>
+                    <p style={{padding: '0 10px'}}>Contact me on <a href='https://reddit.com/message/compose/?to=scifi_panda'>Reddit</a> or <a href='https://twitter.com/Scifi_Panda'>Twitter</a>.</p>
                     <p style={{padding: '0 10px'}}>Original by <a href='https://twitter.com/eluctweets'>@eluctweets</a></p>
                 </div>
             </div>
