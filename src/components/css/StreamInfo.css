@@ -37,7 +37,8 @@
     position: absolute;
     right: 50%;
     transform: translate(50%, -100%);
-    width: fit-content;
+    width: 100%;
+    white-space: normal;
     overflow: visible;
     height: auto;
     border: 1px solid black;
