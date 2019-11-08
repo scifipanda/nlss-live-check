@@ -18,6 +18,38 @@ a {
     text-decoration: none;
 }
 
+.menu {
+    position: absolute;
+    color: black;
+    right: 50%;
+    top: 25%;
+    transform: translate(50%);
+    z-index: 10;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.menu-item {
+    padding: 5px 10px;
+    background: white;
+    color: black !important;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menuToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background: black;
+}
+
 .main-container {
     min-height: 100vh; /* will cover the 100% of viewport */
     overflow: hidden;
@@ -78,7 +110,7 @@ a {
 
 .button button:active {
     transform: translateY(1px);
-    box-shadow: 0 3px 0 #474a4d;
+    box-shadow: 0 3px 0 #151f29;
 }
 
 /* footer stuff */
@@ -128,6 +160,10 @@ a {
     border-color: black;
 }
 
+.darkmode.title-hover {
+    background: #262b30;
+}
+
 /* Litemode  */
 
 .litemode.Offline {
@@ -160,6 +196,11 @@ a {
 .litemode h1 {
     color: #000000;
 }
+
+.litemode.title-hover {
+    background: #65baff;
+}
+
 
 /* responsive stuff */
 

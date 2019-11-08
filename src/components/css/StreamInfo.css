@@ -4,19 +4,15 @@
     display: inline-block;
     width: 250px;
     height: 150px;
-    overflow: hidden;
     margin: 5px;
-    box-shadow: 0 5px 0 rgb(34, 37, 39);
+    box-shadow: 0 5px 0 #222527;
     transition: 0.15s;
     margin: 3px auto;
 }
 
 .stream-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 0 rgb(21, 31, 41);
 }
-
-
 
 .stream-info-container {
     display: flex;
@@ -29,6 +25,32 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 5px 7px;
+    cursor: default;
+}
+
+.stream-title:hover + .title-hover {
+    visibility: visible;
+}
+
+.title-hover {
+    visibility: hidden;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -100%);
+    width: fit-content;
+    overflow: visible;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 3px 0 #151f29;
+}
+
+.title-hover:hover {
+    visibility: visible;
+}
+
+.title-hover:active {
+    visibility: visible;
 }
 
 /* Streamer link and info styling */

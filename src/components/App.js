@@ -29,7 +29,7 @@ class App extends React.Component {
         this.renderStreamer = this.renderStreamer.bind(this);
     }
     
-    state = { hide: false, dark: false }
+    state = { hide: false, dark: false, menu: false }
 
     componentDidMount() {  // Sets state to saved preference if it exists
         if(ls.get('dark')) {
@@ -58,10 +58,25 @@ class App extends React.Component {
         this.setState({ hide: !this.state.hide })
     }
 
+    // showMenu = () => {
+    //     this.setState({ menu: !this.state.menu })
+    // }
+
     render() {
         return(
             <div className={'main-container ' + this.isDark()}>
                 
+                {/* <div onClick={() => this.showMenu()} className="menuToggle"></div>  Coming soon
+
+                <div className={this.state.menu ? 'menu' : 'hidden'}>
+                    <p className="menu-item">NLSS Schedule</p>
+                    <p className="menu-item">NLSS Extended Universe</p>
+                </div>
+ 
+                <div className="schedule">
+
+                </div> */}
+
                 <h1 className="title center">NLSS Live Stream Check</h1>
                 <div className='button center'>
                     <button className="shadow" onClick={() => this.hideOffline()}>{this.state.hide ? 'Show all streams' : 'Only show live streams'}</button>

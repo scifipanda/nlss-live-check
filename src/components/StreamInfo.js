@@ -81,6 +81,18 @@ class StreamInfo extends React.Component {
         }
     }
 
+    displayTitle = () => {
+        if(this.state[this.props.user[0]] === live) {
+            return (
+                <div>
+                    <div className="stream-title"><span>{this.state.title}</span></div>
+                    <div className={"stream-title title-hover" + this.props.isDark}><span>{this.state.title}</span></div>
+                    <div className="stream-title"><span>{this.state.game}</span></div>
+                </div>
+            )
+        }
+    }
+
     render(){
         if(!this.props.isHidden || this.state[this.props.user[0]] === live) { // Only renders if channel is live or if channel is not marked hidden
            return(
@@ -95,8 +107,7 @@ class StreamInfo extends React.Component {
                 
                 <hr className="hr" />
 
-                <div className="stream-title"><span>{this.state.title}</span></div>
-                <div className="stream-title"><span>{this.state.game}</span></div>
+                {this.displayTitle()}
             </div>
         ) 
         }
