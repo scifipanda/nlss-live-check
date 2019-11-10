@@ -12,6 +12,7 @@
 
 .stream-container:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 0 #222527;
 }
 
 .stream-info-container {
@@ -40,17 +41,12 @@
     width: 100%;
     white-space: normal;
     overflow: visible;
-    height: auto;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 3px 0 #151f29;
 }
 
 .title-hover:hover {
-    visibility: visible;
-}
-
-.title-hover:active {
     visibility: visible;
 }
 
