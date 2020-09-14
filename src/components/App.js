@@ -20,7 +20,9 @@ let streamers = [ // List of current streamers [twitch channel, twitter account,
     ['hcjustin', 'hcjustinn', 'hcjustin', ],
     ['itshafu', 'itshafu', 'channel/UCddX-H9xUwQH6jOOHuL2vYw'],
     ['unrulybabs', 'unrulybabs', 'no-youtube'],
-    ['sinowbeats', 'sinowbeats', 'channel/UCQghs_p93F6BdyRiPJST2rg']
+    ['sinowbeats', 'sinowbeats', 'channel/UCQghs_p93F6BdyRiPJST2rg'],
+    ['skadj', 'skadjak', 'no-youtube'],
+    ['chiblee', 'chibleee', 'no-youtube']
 ]
 
 class App extends React.Component {
